@@ -8,6 +8,7 @@ import {
 } from "@/components/ui/card";
 import { Label } from "@/components/ui/label";
 import { Input } from "@/components/ui/input";
+import { emailLogin, signup } from "./actions";
 
 export default function Login({
   searchParams,
@@ -52,11 +53,13 @@ export default function Login({
                 {searchParams.message}
               </div>
             )}
-            <Button className="w-full">Login</Button>
+            <Button formAction={emailLogin} className="w-full">
+              Login
+            </Button>
           </form>
           <div className="mt-4 text-center text-sm">
             Don&apos;t have an account?{" "}
-            <button form="login-form" className="underline">
+            <button formAction={signup} form="login-form" className="underline">
               Sign up
             </button>
           </div>
